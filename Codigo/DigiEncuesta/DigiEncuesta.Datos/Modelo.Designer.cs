@@ -1,0 +1,2 @@
+﻿// Ver este comentario implica un error en la generación de código del archivo 'C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\Modelo.edmx'
+//. Vea ErrorList para obtener detalles.

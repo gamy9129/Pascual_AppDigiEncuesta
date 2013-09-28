@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" Namespace="Modelo.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="ModeloTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Modelo" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="ModeloContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Preguntas" EntityType="Modelo.Pregunta" />
+          <EntitySet Name="Respuestas" EntityType="Modelo.Respuesta" />
+          <EntitySet Name="Encuestadores" EntityType="Modelo.Encuestador" />
+          <EntitySet Name="Encuestas" EntityType="Modelo.Encuesta" />
+          <EntitySet Name="Tipo_Encuestas" EntityType="Modelo.Tipo_Pregunta" />
+          <EntitySet Name="Opciones" EntityType="Modelo.Opcion" />
+          <EntitySet Name="Personas" EntityType="Modelo.Persona" />
+        </EntityContainer>
+        <EntityType Name="Pregunta" >
+          <Property Type="String" Name="Numeracion" Nullable="false" />
+          <Property Type="String" Name="Texto" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Respuesta" >
+          <Property Type="String" Name="Valor" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Encuestador" >
+          <Property Type="String" Name="Id_Encuestador" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="String" Name="Contraseña" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Encuesta" >
+          <Property Type="String" Name="Fecha" Nullable="false" />
+          <Property Type="String" Name="Muestra" Nullable="false" />
+          <Property Type="String" Name="Publico" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tipo_Pregunta" >
+          <Property Type="String" Name="Codigo" Nullable="false" />
+          <Property Type="String" Name="Descripcion" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Opcion" >
+          <Property Type="String" Name="Numeral" Nullable="false" />
+          <Property Type="String" Name="Texto" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Persona" >
+          <Property Type="String" Name="Id_persona" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" />
+          <Property Type="String" Name="Barrio" Nullable="false" />
+          <Property Type="String" Name="Direccion" Nullable="false" />
+          <Property Type="String" Name="Telefono" Nullable="false" />
+          <Property Type="String" Name="Edad" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Modelo" />
+        <Alias Key="Target" Value="Modelo.Store" />
+        <EntityContainerMapping CdmEntityContainer="ModeloContainer" StorageEntityContainer="ModeloTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Modelo" >
+        <EntityTypeShape EntityType="Modelo.Pregunta" Width="1.5" PointX="2.75" PointY="2" Height="1.4033821614583333" />
+        <EntityTypeShape EntityType="Modelo.Respuesta" Width="1.5" PointX="4.5" PointY="0.625" Height="1.211080729166667" />
+        <EntityTypeShape EntityType="Modelo.Encuestador" Width="1.5" PointX="0.5" PointY="0.5" Height="1.59568359375" />
+        <EntityTypeShape EntityType="Modelo.Encuesta" Width="1.5" PointX="0.5" PointY="2.5" Height="1.59568359375" />
+        <EntityTypeShape EntityType="Modelo.Tipo_Pregunta" Width="1.5" PointX="2.75" PointY="0.5" Height="1.4033821614583331" />
+        <EntityTypeShape EntityType="Modelo.Opcion" Width="1.5" PointX="2.75" PointY="3.5" Height="1.4033821614583333" />
+        <EntityTypeShape EntityType="Modelo.Persona" Width="1.5" PointX="6.375" PointY="0.625" Height="2.1725878906249996" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
