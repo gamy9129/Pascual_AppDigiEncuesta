@@ -1,0 +1,8 @@
+C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\bin\Release\DigiEncuesta.Datos.dll.config
+C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\bin\Release\DigiEncuesta.Datos.dll
+C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\bin\Release\DigiEncuesta.Datos.pdb
+C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\bin\Release\DigiEncuesta.Entidades.dll
+C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\bin\Release\DigiEncuesta.Entidades.pdb
+C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\obj\Release\ResolveAssemblyReference.cache
+C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\obj\Release\DigiEncuesta.Datos.dll
+C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\obj\Release\DigiEncuesta.Datos.pdb

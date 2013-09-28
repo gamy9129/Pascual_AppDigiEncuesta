@@ -20,40 +20,129 @@
           <EntitySet Name="Tipo_Encuestas" EntityType="Modelo.Tipo_Pregunta" />
           <EntitySet Name="Opciones" EntityType="Modelo.Opcion" />
           <EntitySet Name="Personas" EntityType="Modelo.Persona" />
+          <AssociationSet Name="EncuestadorEncuesta" Association="Modelo.EncuestadorEncuesta">
+            <End Role="Encuestador" EntitySet="Encuestadores" />
+            <End Role="Encuesta" EntitySet="Encuestas" />
+          </AssociationSet>
+          <AssociationSet Name="EncuestaPersona" Association="Modelo.EncuestaPersona">
+            <End Role="Encuesta" EntitySet="Encuestas" />
+            <End Role="Persona" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="EncuestaPregunta" Association="Modelo.EncuestaPregunta">
+            <End Role="Encuesta" EntitySet="Encuestas" />
+            <End Role="Pregunta" EntitySet="Preguntas" />
+          </AssociationSet>
+          <AssociationSet Name="Tipo_PreguntaPregunta" Association="Modelo.Tipo_PreguntaPregunta">
+            <End Role="Tipo_Pregunta" EntitySet="Tipo_Encuestas" />
+            <End Role="Pregunta" EntitySet="Preguntas" />
+          </AssociationSet>
+          <AssociationSet Name="OpcionPregunta" Association="Modelo.OpcionPregunta">
+            <End Role="Opcion" EntitySet="Opciones" />
+            <End Role="Pregunta" EntitySet="Preguntas" />
+          </AssociationSet>
+          <AssociationSet Name="RespuestaPregunta" Association="Modelo.RespuestaPregunta">
+            <End Role="Respuesta" EntitySet="Respuestas" />
+            <End Role="Pregunta" EntitySet="Preguntas" />
+          </AssociationSet>
+          <AssociationSet Name="PersonaRespuesta" Association="Modelo.PersonaRespuesta">
+            <End Role="Persona" EntitySet="Personas" />
+            <End Role="Respuesta" EntitySet="Respuestas" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Pregunta" >
-          <Property Type="String" Name="Numeracion" Nullable="false" />
+          <Key>
+            <PropertyRef Name="Id_Pregunta" />
+          </Key>
+          <Property Type="Int32" Name="Numeracion" Nullable="false" />
           <Property Type="String" Name="Texto" Nullable="false" />
+          <Property Type="Int32" Name="Id_Pregunta" Nullable="false" />
+          <NavigationProperty Name="Tipo_Pregunta" Relationship="Modelo.Tipo_PreguntaPregunta" FromRole="Pregunta" ToRole="Tipo_Pregunta" />
+          <NavigationProperty Name="Opciones" Relationship="Modelo.OpcionPregunta" FromRole="Pregunta" ToRole="Opcion" />
         </EntityType>
         <EntityType Name="Respuesta" >
+          <Key>
+            <PropertyRef Name="Id_Respuesta" />
+          </Key>
           <Property Type="String" Name="Valor" Nullable="false" />
+          <Property Type="Int32" Name="Id_Respuesta" Nullable="false" />
+          <NavigationProperty Name="Pregunta" Relationship="Modelo.RespuestaPregunta" FromRole="Respuesta" ToRole="Pregunta" />
+          <NavigationProperty Name="Persona" Relationship="Modelo.PersonaRespuesta" FromRole="Respuesta" ToRole="Persona" />
         </EntityType>
         <EntityType Name="Encuestador" >
-          <Property Type="String" Name="Id_Encuestador" Nullable="false" />
+          <Key>
+            <PropertyRef Name="Id_Encuestador" />
+          </Key>
+          <Property Type="Int32" Name="Id_Encuestador" Nullable="false" />
           <Property Type="String" Name="Nombre" Nullable="false" />
           <Property Type="String" Name="Contraseña" Nullable="false" />
         </EntityType>
         <EntityType Name="Encuesta" >
+          <Key>
+            <PropertyRef Name="Id_Encuesta" />
+          </Key>
           <Property Type="String" Name="Fecha" Nullable="false" />
-          <Property Type="String" Name="Muestra" Nullable="false" />
+          <Property Type="Int32" Name="Muestra" Nullable="false" />
           <Property Type="String" Name="Publico" Nullable="false" />
+          <Property Type="Int32" Name="Id_Encuesta" Nullable="false" />
+          <NavigationProperty Name="Encuestador" Relationship="Modelo.EncuestadorEncuesta" FromRole="Encuesta" ToRole="Encuestador" />
+          <Property Type="String" Name="Nombre_Encuesta" Nullable="false" />
+          <NavigationProperty Name="Preguntas" Relationship="Modelo.EncuestaPregunta" FromRole="Encuesta" ToRole="Pregunta" />
         </EntityType>
         <EntityType Name="Tipo_Pregunta" >
-          <Property Type="String" Name="Codigo" Nullable="false" />
+          <Key>
+            <PropertyRef Name="Id_TipoPregunta" />
+          </Key>
+          <Property Type="Int32" Name="Id_TipoPregunta" Nullable="false" />
           <Property Type="String" Name="Descripcion" Nullable="false" />
         </EntityType>
         <EntityType Name="Opcion" >
+          <Key>
+            <PropertyRef Name="Id_Opcion" />
+          </Key>
           <Property Type="String" Name="Numeral" Nullable="false" />
           <Property Type="String" Name="Texto" Nullable="false" />
+          <Property Type="Int32" Name="Id_Opcion" Nullable="false" />
         </EntityType>
         <EntityType Name="Persona" >
-          <Property Type="String" Name="Id_persona" Nullable="false" />
+          <Key>
+            <PropertyRef Name="Id_Persona" />
+          </Key>
+          <Property Type="Int32" Name="Id_Persona" Nullable="false" />
           <Property Type="String" Name="Nombre" Nullable="false" />
           <Property Type="String" Name="Barrio" Nullable="false" />
           <Property Type="String" Name="Direccion" Nullable="false" />
           <Property Type="String" Name="Telefono" Nullable="false" />
-          <Property Type="String" Name="Edad" Nullable="false" />
+          <Property Type="Int32" Name="Edad" Nullable="false" />
+          <NavigationProperty Name="Encuesta" Relationship="Modelo.EncuestaPersona" FromRole="Persona" ToRole="Encuesta" />
         </EntityType>
+        <Association Name="EncuestadorEncuesta">
+          <End Type="Modelo.Encuestador" Role="Encuestador" Multiplicity="*" />
+          <End Type="Modelo.Encuesta" Role="Encuesta" Multiplicity="*" />
+        </Association>
+        <Association Name="EncuestaPersona">
+          <End Type="Modelo.Encuesta" Role="Encuesta" Multiplicity="1" />
+          <End Type="Modelo.Persona" Role="Persona" Multiplicity="*" />
+        </Association>
+        <Association Name="EncuestaPregunta">
+          <End Type="Modelo.Encuesta" Role="Encuesta" Multiplicity="1" />
+          <End Type="Modelo.Pregunta" Role="Pregunta" Multiplicity="*" />
+        </Association>
+        <Association Name="Tipo_PreguntaPregunta">
+          <End Type="Modelo.Tipo_Pregunta" Role="Tipo_Pregunta" Multiplicity="1" />
+          <End Type="Modelo.Pregunta" Role="Pregunta" Multiplicity="*" />
+        </Association>
+        <Association Name="OpcionPregunta">
+          <End Type="Modelo.Opcion" Role="Opcion" Multiplicity="*" />
+          <End Type="Modelo.Pregunta" Role="Pregunta" Multiplicity="1" />
+        </Association>
+        <Association Name="RespuestaPregunta">
+          <End Type="Modelo.Respuesta" Role="Respuesta" Multiplicity="*" />
+          <End Type="Modelo.Pregunta" Role="Pregunta" Multiplicity="1" />
+        </Association>
+        <Association Name="PersonaRespuesta">
+          <End Type="Modelo.Persona" Role="Persona" Multiplicity="1" />
+          <End Type="Modelo.Respuesta" Role="Respuesta" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -82,13 +171,50 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram Name="Modelo" >
-        <EntityTypeShape EntityType="Modelo.Pregunta" Width="1.5" PointX="2.75" PointY="2" Height="1.4033821614583333" />
-        <EntityTypeShape EntityType="Modelo.Respuesta" Width="1.5" PointX="4.5" PointY="0.625" Height="1.211080729166667" />
+        <EntityTypeShape EntityType="Modelo.Pregunta" Width="1.5" PointX="4.5" PointY="2.625" Height="1.9802864583333326" />
+        <EntityTypeShape EntityType="Modelo.Respuesta" Width="1.5" PointX="4.5" PointY="0.625" Height="1.4033821614583331" />
         <EntityTypeShape EntityType="Modelo.Encuestador" Width="1.5" PointX="0.5" PointY="0.5" Height="1.59568359375" />
-        <EntityTypeShape EntityType="Modelo.Encuesta" Width="1.5" PointX="0.5" PointY="2.5" Height="1.59568359375" />
-        <EntityTypeShape EntityType="Modelo.Tipo_Pregunta" Width="1.5" PointX="2.75" PointY="0.5" Height="1.4033821614583331" />
-        <EntityTypeShape EntityType="Modelo.Opcion" Width="1.5" PointX="2.75" PointY="3.5" Height="1.4033821614583333" />
-        <EntityTypeShape EntityType="Modelo.Persona" Width="1.5" PointX="6.375" PointY="0.625" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="Modelo.Encuesta" Width="1.5" PointX="0.5" PointY="2.5" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="Modelo.Tipo_Pregunta" Width="1.5" PointX="2.75" PointY="0.5" Height="1.4033821614583333" />
+        <EntityTypeShape EntityType="Modelo.Opcion" Width="1.5" PointX="6.75" PointY="2" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="Modelo.Persona" Width="1.5" PointX="2.375" PointY="2.375" Height="2.3648893229166665" />
+        <AssociationConnector Association="Modelo.EncuestadorEncuesta">
+          <ConnectorPoint PointX="1.25" PointY="2.09568359375" />
+          <ConnectorPoint PointX="1.25" PointY="2.5" />
+        </AssociationConnector>
+        <AssociationConnector Association="Modelo.EncuestaPersona">
+          <ConnectorPoint PointX="2" PointY="3.6199446614583333" />
+          <ConnectorPoint PointX="2.375" PointY="3.6199446614583333" />
+        </AssociationConnector>
+        <AssociationConnector Association="Modelo.EncuestaPregunta">
+          <ConnectorPoint PointX="1.25" PointY="4.8648893229166656" />
+          <ConnectorPoint PointX="1.25" PointY="5.1148893229166656" />
+          <ConnectorPoint PointX="4.125" PointY="5.1148893229166656" />
+          <ConnectorPoint PointX="4.125" PointY="3.6151432291666663" />
+          <ConnectorPoint PointX="4.5" PointY="3.6151432291666663" />
+        </AssociationConnector>
+        <AssociationConnector Association="Modelo.Tipo_PreguntaPregunta">
+          <ConnectorPoint PointX="4.25" PointY="1.2016910807291668" />
+          <ConnectorPoint PointX="4.4375" PointY="1.2016910807291668" />
+          <ConnectorPoint PointX="4.4375" PointY="2.4754850260416665" />
+          <ConnectorPoint PointX="4.843748" PointY="2.4754850260416665" />
+          <ConnectorPoint PointX="4.843748" PointY="2.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="Modelo.OpcionPregunta">
+          <ConnectorPoint PointX="6.75" PointY="3.110341796875" />
+          <ConnectorPoint PointX="6" PointY="3.110341796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="Modelo.RespuestaPregunta">
+          <ConnectorPoint PointX="5.6875" PointY="2.22068359375" />
+          <ConnectorPoint PointX="5.6875" PointY="2.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="Modelo.PersonaRespuesta">
+          <ConnectorPoint PointX="3.125" PointY="2.375" />
+          <ConnectorPoint PointX="3.125" PointY="2.25212" />
+          <ConnectorPoint PointX="4.37712" PointY="2.25212" />
+          <ConnectorPoint PointX="4.37712" PointY="1.8073375533854166" />
+          <ConnectorPoint PointX="4.5" PointY="1.8073375533854166" />
+        </AssociationConnector>
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,0 +1,5 @@
+C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Entidades\bin\Release\DigiEncuesta.Entidades.dll
+C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Entidades\bin\Release\DigiEncuesta.Entidades.pdb
+C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Entidades\obj\Release\ResolveAssemblyReference.cache
+C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Entidades\obj\Release\DigiEncuesta.Entidades.dll
+C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Entidades\obj\Release\DigiEncuesta.Entidades.pdb
