@@ -3,3 +3,8 @@ C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncue
 C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Entidades\obj\Release\ResolveAssemblyReference.cache
 C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Entidades\obj\Release\DigiEncuesta.Entidades.dll
 C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Entidades\obj\Release\DigiEncuesta.Entidades.pdb
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Entidades\bin\Release\DigiEncuesta.Entidades.dll
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Entidades\bin\Release\DigiEncuesta.Entidades.pdb
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Entidades\obj\Release\ResolveAssemblyReference.cache
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Entidades\obj\Release\DigiEncuesta.Entidades.dll
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Entidades\obj\Release\DigiEncuesta.Entidades.pdb

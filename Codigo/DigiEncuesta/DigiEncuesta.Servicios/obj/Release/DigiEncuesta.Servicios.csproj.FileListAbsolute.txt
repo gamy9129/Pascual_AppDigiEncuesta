@@ -7,3 +7,14 @@ C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncue
 C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Servicios\obj\Release\ResolveAssemblyReference.cache
 C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Servicios\obj\Release\DigiEncuesta.Servicios.dll
 C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Servicios\obj\Release\DigiEncuesta.Servicios.pdb
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Servicios\bin\DigiEncuesta.Servicios.dll
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Servicios\bin\DigiEncuesta.Servicios.pdb
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Servicios\bin\DigiEncuesta.Entidades.dll
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Servicios\bin\DigiEncuesta.Logica.dll
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Servicios\bin\DigiEncuesta.Entidades.pdb
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Servicios\bin\DigiEncuesta.Logica.pdb
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Servicios\obj\Release\ResolveAssemblyReference.cache
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Servicios\obj\Release\DigiEncuesta.Servicios.dll
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Servicios\obj\Release\DigiEncuesta.Servicios.pdb
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Servicios\bin\DigiEncuesta.Datos.dll
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Servicios\bin\DigiEncuesta.Datos.pdb

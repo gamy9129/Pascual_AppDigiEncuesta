@@ -12,22 +12,33 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
+	<phone:PhoneApplicationPage.ApplicationBar>
+		<shell:ApplicationBar>
+			<shell:ApplicationBarIconButton x:Name="btnAdicionar" IconUri="/icons/add.png" Text="Iniciar Sesión" IsEnabled="True" Click="btnAdicionar_Click"/>
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
 
     <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="#FF2C89A0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="MI APLICACIÓN" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="nombre de la página" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="8,17,4,28" Background="#FF2C89A0">
+            <TextBlock x:Name="ApplicationTitle" Text="DIGIENCUESTA" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="ingresar" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel. Colocar aquí el contenido adicional-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0"></Grid>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="16,0,8,8" Background="#FF2C89A0">
+        	<TextBlock HorizontalAlignment="Left" Margin="71,238,0,262" TextWrapping="Wrap" Text="usuario" d:LayoutOverrides="Height"/>
+        	<TextBox x:Name="txtUsuario" Margin="53,263,78,192" TextWrapping="Wrap" d:LayoutOverrides="Height"/>
+        	<TextBlock HorizontalAlignment="Left" Margin="69,0,0,133" TextWrapping="Wrap" Text="contraseña" VerticalAlignment="Bottom"/>
+        	<TextBox x:Name="txtContraseña" Margin="53,0,78,64" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
+        	<Image Height="189" Margin="121,31,142,0" Source="/Background.png" Stretch="Fill" VerticalAlignment="Top"/>
+        </Grid>
     </Grid>
  
     <!--Código de ejemplo que muestra el uso de ApplicationBar-->

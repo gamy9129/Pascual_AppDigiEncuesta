@@ -5,7 +5,9 @@ using System.Text;
 
 namespace DigiEncuesta.Entidades
 {
-    public class Class1
+    public class EntidadEncuestador
     {
+        public int Usuario { get; set; }
+        public string Nombre { get; set; }
     }
 }

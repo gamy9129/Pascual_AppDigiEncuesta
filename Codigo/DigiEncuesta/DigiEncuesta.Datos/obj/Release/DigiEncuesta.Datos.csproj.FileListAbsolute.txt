@@ -6,3 +6,11 @@ C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncue
 C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\obj\Release\ResolveAssemblyReference.cache
 C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\obj\Release\DigiEncuesta.Datos.dll
 C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\obj\Release\DigiEncuesta.Datos.pdb
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\bin\Release\DigiEncuesta.Datos.dll.config
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\bin\Release\DigiEncuesta.Datos.dll
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\bin\Release\DigiEncuesta.Datos.pdb
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\bin\Release\DigiEncuesta.Entidades.dll
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\bin\Release\DigiEncuesta.Entidades.pdb
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\obj\Release\ResolveAssemblyReference.cache
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\obj\Release\DigiEncuesta.Datos.dll
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\obj\Release\DigiEncuesta.Datos.pdb

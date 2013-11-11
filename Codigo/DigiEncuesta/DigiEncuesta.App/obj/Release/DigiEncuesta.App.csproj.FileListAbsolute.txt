@@ -11,3 +11,19 @@ C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncue
 C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\obj\Release\DigiEncuesta.App.dll
 C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\obj\Release\DigiEncuesta.App.pdb
 C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\obj\Release\XapCacheFile.xml
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\Bin\Release\ApplicationIcon.png
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\Bin\Release\Background.png
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\Bin\Release\DigiEncuesta.App.dll
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\Bin\Release\DigiEncuesta.App.pdb
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\Bin\Release\AppManifest.xaml
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\Bin\Release\DigiEncuesta.App.xap
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\obj\Release\ResolveAssemblyReference.cache
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\obj\Release\App.g.i.cs
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\obj\Release\MainPage.g.i.cs
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\obj\Release\DigiEncuesta.App.g.resources
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\obj\Release\DigiEncuesta.App.dll
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\obj\Release\DigiEncuesta.App.pdb
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\obj\Release\XapCacheFile.xml
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\Bin\Release\icons\appbar.add.rest.png
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\Bin\Release\icons\add.png
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\obj\Release\Encuestas.g.i.cs

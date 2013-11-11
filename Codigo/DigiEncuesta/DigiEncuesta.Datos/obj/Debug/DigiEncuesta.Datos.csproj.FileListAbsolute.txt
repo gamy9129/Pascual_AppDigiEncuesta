@@ -1,0 +1,8 @@
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\bin\Debug\DigiEncuesta.Datos.dll.config
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\bin\Debug\DigiEncuesta.Datos.dll
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\bin\Debug\DigiEncuesta.Datos.pdb
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\bin\Debug\DigiEncuesta.Entidades.dll
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\bin\Debug\DigiEncuesta.Entidades.pdb
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\obj\Debug\ResolveAssemblyReference.cache
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\obj\Debug\DigiEncuesta.Datos.dll
+D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.Datos\obj\Debug\DigiEncuesta.Datos.pdb

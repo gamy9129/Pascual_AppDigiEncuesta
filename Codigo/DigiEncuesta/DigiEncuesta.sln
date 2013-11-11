@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigiEncuesta.App", "DigiEncuesta.App\DigiEncuesta.App.csproj", "{9E239FD4-7FC3-4F5A-BC95-49E8E3E6F46E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B91DE2A7-6926-449A-B281-717820DEE2B4} = {B91DE2A7-6926-449A-B281-717820DEE2B4}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigiEncuesta.Servicios", "DigiEncuesta.Servicios\DigiEncuesta.Servicios.csproj", "{B91DE2A7-6926-449A-B281-717820DEE2B4}"
 EndProject

@@ -1,6 +1,127 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
-  <Alias Key="Model" Value="Modelo" />
-  <Alias Key="Target" Value="Modelo.Store" />
-  <EntityContainerMapping CdmEntityContainer="ModeloContainer" StorageEntityContainer="ModeloTargetContainer" />
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModeloStoreContainer" CdmEntityContainer="ModeloContainer">
+    <EntitySetMapping Name="Preguntas">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Pregunta)">
+        <MappingFragment StoreEntitySet="Preguntas">
+          <ScalarProperty Name="Id_Pregunta" ColumnName="Id_Pregunta" />
+          <ScalarProperty Name="Numeracion" ColumnName="Numeracion" />
+          <ScalarProperty Name="Texto" ColumnName="Texto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Respuestas">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Respuesta)">
+        <MappingFragment StoreEntitySet="Respuestas">
+          <ScalarProperty Name="Id_Respuesta" ColumnName="Id_Respuesta" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Encuestadores">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Encuestador)">
+        <MappingFragment StoreEntitySet="Encuestadores">
+          <ScalarProperty Name="Id_Encuestador" ColumnName="Id_Encuestador" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Encuestas">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Encuesta)">
+        <MappingFragment StoreEntitySet="Encuestas">
+          <ScalarProperty Name="Id_Encuesta" ColumnName="Id_Encuesta" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Muestra" ColumnName="Muestra" />
+          <ScalarProperty Name="Publico" ColumnName="Publico" />
+          <ScalarProperty Name="Nombre_Encuesta" ColumnName="Nombre_Encuesta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Encuestas">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Tipo_Pregunta)">
+        <MappingFragment StoreEntitySet="Tipo_Encuestas">
+          <ScalarProperty Name="Id_TipoPregunta" ColumnName="Id_TipoPregunta" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Opciones">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Opcion)">
+        <MappingFragment StoreEntitySet="Opciones">
+          <ScalarProperty Name="Id_Opcion" ColumnName="Id_Opcion" />
+          <ScalarProperty Name="Numeral" ColumnName="Numeral" />
+          <ScalarProperty Name="Texto" ColumnName="Texto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personas">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Persona)">
+        <MappingFragment StoreEntitySet="Personas">
+          <ScalarProperty Name="Id_Persona" ColumnName="Id_Persona" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Barrio" ColumnName="Barrio" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="EncuestadorEncuesta" TypeName="Modelo.EncuestadorEncuesta" StoreEntitySet="EncuestadorEncuesta">
+      <EndProperty Name="Encuestador">
+        <ScalarProperty Name="Id_Encuestador" ColumnName="Encuestador_Id_Encuestador" />
+      </EndProperty>
+      <EndProperty Name="Encuesta">
+        <ScalarProperty Name="Id_Encuesta" ColumnName="EncuestadorEncuesta_Encuestador_Id_Encuesta" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EncuestaPersona" TypeName="Modelo.EncuestaPersona" StoreEntitySet="Personas">
+      <EndProperty Name="Encuesta">
+        <ScalarProperty Name="Id_Encuesta" ColumnName="Encuesta_Id_Encuesta" />
+      </EndProperty>
+      <EndProperty Name="Persona">
+        <ScalarProperty Name="Id_Persona" ColumnName="Id_Persona" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EncuestaPregunta" TypeName="Modelo.EncuestaPregunta" StoreEntitySet="Preguntas">
+      <EndProperty Name="Encuesta">
+        <ScalarProperty Name="Id_Encuesta" ColumnName="EncuestaPregunta_Pregunta_Id_Encuesta" />
+      </EndProperty>
+      <EndProperty Name="Pregunta">
+        <ScalarProperty Name="Id_Pregunta" ColumnName="Id_Pregunta" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Tipo_PreguntaPregunta" TypeName="Modelo.Tipo_PreguntaPregunta" StoreEntitySet="Preguntas">
+      <EndProperty Name="Tipo_Pregunta">
+        <ScalarProperty Name="Id_TipoPregunta" ColumnName="Tipo_Pregunta_Id_TipoPregunta" />
+      </EndProperty>
+      <EndProperty Name="Pregunta">
+        <ScalarProperty Name="Id_Pregunta" ColumnName="Id_Pregunta" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="OpcionPregunta" TypeName="Modelo.OpcionPregunta" StoreEntitySet="Opciones">
+      <EndProperty Name="Pregunta">
+        <ScalarProperty Name="Id_Pregunta" ColumnName="OpcionPregunta_Opcion_Id_Pregunta" />
+      </EndProperty>
+      <EndProperty Name="Opcion">
+        <ScalarProperty Name="Id_Opcion" ColumnName="Id_Opcion" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RespuestaPregunta" TypeName="Modelo.RespuestaPregunta" StoreEntitySet="Respuestas">
+      <EndProperty Name="Pregunta">
+        <ScalarProperty Name="Id_Pregunta" ColumnName="Pregunta_Id_Pregunta" />
+      </EndProperty>
+      <EndProperty Name="Respuesta">
+        <ScalarProperty Name="Id_Respuesta" ColumnName="Id_Respuesta" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonaRespuesta" TypeName="Modelo.PersonaRespuesta" StoreEntitySet="Respuestas">
+      <EndProperty Name="Persona">
+        <ScalarProperty Name="Id_Persona" ColumnName="Persona_Id_Persona" />
+      </EndProperty>
+      <EndProperty Name="Respuesta">
+        <ScalarProperty Name="Id_Respuesta" ColumnName="Id_Respuesta" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
 </Mapping>

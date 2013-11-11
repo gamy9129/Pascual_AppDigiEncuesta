@@ -1,8 +1,13 @@
-﻿<xapCache source="C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\Bin\Release\DigiEncuesta.App.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="28/09/2013 01:34:47 p.m.">
-  <file source="C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\Bin\Release\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="28/09/2013 01:34:47 p.m." />
-  <file source="C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\Background.png" archivePath="Background.png" lastWriteTime="28/09/2013 12:09:14 p.m." />
-  <file source="C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="28/09/2013 12:09:14 p.m." />
-  <file source="C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\obj\Release\DigiEncuesta.App.dll" archivePath="DigiEncuesta.App.dll" lastWriteTime="28/09/2013 01:34:45 p.m." />
-  <file source="C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="28/09/2013 12:09:14 p.m." />
-  <file source="C:\Users\ANGELA GARCIA\Documents\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\Bin\Release\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="28/09/2013 01:34:47 p.m." />
+﻿<xapCache source="D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\Bin\Release\DigiEncuesta.App.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="09/11/2013 01:36:58 p.m.">
+  <file source="D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\Bin\Release\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="09/11/2013 12:55:14 p.m." />
+  <file source="D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\Background.png" archivePath="Background.png" lastWriteTime="09/11/2013 11:35:21 a.m." />
+  <file source="D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="09/11/2013 11:38:05 a.m." />
+  <file source="D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\obj\Release\DigiEncuesta.App.dll" archivePath="DigiEncuesta.App.dll" lastWriteTime="09/11/2013 01:36:58 p.m." />
+  <file source="D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="09/11/2013 01:10:22 p.m." />
+  <file source="D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\icons\appbar.add.rest.png" archivePath="icons\appbar.add.rest.png" lastWriteTime="29/08/2011 10:47:42 p.m." />
+  <file source="D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="09/11/2013 11:32:38 a.m." />
+  <file source="D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\icons\add.png" archivePath="icons\add.png" lastWriteTime="09/11/2013 12:31:50 p.m." />
+  <file source="D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\Bin\Release\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="09/11/2013 11:41:23 a.m." />
+  <file source="D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\Bin\Release\icons\appbar.add.rest.png" archivePath="icons\appbar.add.rest.png" lastWriteTime="29/08/2011 10:47:42 p.m." />
+  <file source="D:\GitHub\Pascual_AppDigiEncuesta\Codigo\DigiEncuesta\DigiEncuesta.App\Bin\Release\icons\add.png" archivePath="icons\add.png" lastWriteTime="09/11/2013 12:31:50 p.m." />
 </xapCache>

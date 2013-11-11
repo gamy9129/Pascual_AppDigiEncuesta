@@ -1,4 +1,214 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" Namespace="Modelo.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
-  <EntityContainer Name="ModeloTargetContainer" />
+<Schema Namespace="Modelo.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ModeloStoreContainer">
+    <EntitySet Name="Preguntas" EntityType="Modelo.Store.Preguntas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Respuestas" EntityType="Modelo.Store.Respuestas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Encuestadores" EntityType="Modelo.Store.Encuestadores" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Encuestas" EntityType="Modelo.Store.Encuestas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tipo_Encuestas" EntityType="Modelo.Store.Tipo_Encuestas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Opciones" EntityType="Modelo.Store.Opciones" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Personas" EntityType="Modelo.Store.Personas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EncuestadorEncuesta" EntityType="Modelo.Store.EncuestadorEncuesta" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_EncuestadorEncuesta_Encuestador" Association="Modelo.Store.FK_EncuestadorEncuesta_Encuestador">
+      <End Role="Encuestador" EntitySet="Encuestadores" />
+      <End Role="EncuestadorEncuesta" EntitySet="EncuestadorEncuesta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EncuestadorEncuesta_Encuesta" Association="Modelo.Store.FK_EncuestadorEncuesta_Encuesta">
+      <End Role="Encuesta" EntitySet="Encuestas" />
+      <End Role="EncuestadorEncuesta" EntitySet="EncuestadorEncuesta" />
+    </AssociationSet>
+    <AssociationSet Name="EncuestaPersona" Association="Modelo.Store.EncuestaPersona">
+      <End Role="Encuesta" EntitySet="Encuestas" />
+      <End Role="Persona" EntitySet="Personas" />
+    </AssociationSet>
+    <AssociationSet Name="EncuestaPregunta" Association="Modelo.Store.EncuestaPregunta">
+      <End Role="Encuesta" EntitySet="Encuestas" />
+      <End Role="Pregunta" EntitySet="Preguntas" />
+    </AssociationSet>
+    <AssociationSet Name="Tipo_PreguntaPregunta" Association="Modelo.Store.Tipo_PreguntaPregunta">
+      <End Role="Tipo_Pregunta" EntitySet="Tipo_Encuestas" />
+      <End Role="Pregunta" EntitySet="Preguntas" />
+    </AssociationSet>
+    <AssociationSet Name="OpcionPregunta" Association="Modelo.Store.OpcionPregunta">
+      <End Role="Opcion" EntitySet="Opciones" />
+      <End Role="Pregunta" EntitySet="Preguntas" />
+    </AssociationSet>
+    <AssociationSet Name="RespuestaPregunta" Association="Modelo.Store.RespuestaPregunta">
+      <End Role="Respuesta" EntitySet="Respuestas" />
+      <End Role="Pregunta" EntitySet="Preguntas" />
+    </AssociationSet>
+    <AssociationSet Name="PersonaRespuesta" Association="Modelo.Store.PersonaRespuesta">
+      <End Role="Persona" EntitySet="Personas" />
+      <End Role="Respuesta" EntitySet="Respuestas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Preguntas">
+    <Key>
+      <PropertyRef Name="Id_Pregunta" />
+    </Key>
+    <Property Name="Numeracion" Type="int" Nullable="false" />
+    <Property Name="Texto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id_Pregunta" Type="int" Nullable="false" />
+    <Property Name="EncuestaPregunta_Pregunta_Id_Encuesta" Type="int" Nullable="false" />
+    <Property Name="Tipo_Pregunta_Id_TipoPregunta" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Respuestas">
+    <Key>
+      <PropertyRef Name="Id_Respuesta" />
+    </Key>
+    <Property Name="Valor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id_Respuesta" Type="int" Nullable="false" />
+    <Property Name="Pregunta_Id_Pregunta" Type="int" Nullable="false" />
+    <Property Name="Persona_Id_Persona" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Encuestadores">
+    <Key>
+      <PropertyRef Name="Id_Encuestador" />
+    </Key>
+    <Property Name="Id_Encuestador" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Contraseña" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Encuestas">
+    <Key>
+      <PropertyRef Name="Id_Encuesta" />
+    </Key>
+    <Property Name="Fecha" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Muestra" Type="int" Nullable="false" />
+    <Property Name="Publico" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id_Encuesta" Type="int" Nullable="false" />
+    <Property Name="Nombre_Encuesta" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tipo_Encuestas">
+    <Key>
+      <PropertyRef Name="Id_TipoPregunta" />
+    </Key>
+    <Property Name="Id_TipoPregunta" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Opciones">
+    <Key>
+      <PropertyRef Name="Id_Opcion" />
+    </Key>
+    <Property Name="Numeral" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Texto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id_Opcion" Type="int" Nullable="false" />
+    <Property Name="OpcionPregunta_Opcion_Id_Pregunta" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Personas">
+    <Key>
+      <PropertyRef Name="Id_Persona" />
+    </Key>
+    <Property Name="Id_Persona" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Barrio" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefono" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Edad" Type="int" Nullable="false" />
+    <Property Name="Encuesta_Id_Encuesta" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EncuestadorEncuesta">
+    <Key>
+      <PropertyRef Name="Encuestador_Id_Encuestador" />
+      <PropertyRef Name="EncuestadorEncuesta_Encuestador_Id_Encuesta" />
+    </Key>
+    <Property Name="Encuestador_Id_Encuestador" Type="int" Nullable="false" />
+    <Property Name="EncuestadorEncuesta_Encuestador_Id_Encuesta" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="EncuestaPersona">
+    <End Role="Encuesta" Type="Modelo.Store.Encuestas" Multiplicity="1" />
+    <End Role="Persona" Type="Modelo.Store.Personas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Encuesta">
+        <PropertyRef Name="Id_Encuesta" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="Encuesta_Id_Encuesta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EncuestaPregunta">
+    <End Role="Encuesta" Type="Modelo.Store.Encuestas" Multiplicity="1" />
+    <End Role="Pregunta" Type="Modelo.Store.Preguntas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Encuesta">
+        <PropertyRef Name="Id_Encuesta" />
+      </Principal>
+      <Dependent Role="Pregunta">
+        <PropertyRef Name="EncuestaPregunta_Pregunta_Id_Encuesta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Tipo_PreguntaPregunta">
+    <End Role="Tipo_Pregunta" Type="Modelo.Store.Tipo_Encuestas" Multiplicity="1" />
+    <End Role="Pregunta" Type="Modelo.Store.Preguntas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_Pregunta">
+        <PropertyRef Name="Id_TipoPregunta" />
+      </Principal>
+      <Dependent Role="Pregunta">
+        <PropertyRef Name="Tipo_Pregunta_Id_TipoPregunta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OpcionPregunta">
+    <End Role="Opcion" Type="Modelo.Store.Opciones" Multiplicity="*" />
+    <End Role="Pregunta" Type="Modelo.Store.Preguntas" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Pregunta">
+        <PropertyRef Name="Id_Pregunta" />
+      </Principal>
+      <Dependent Role="Opcion">
+        <PropertyRef Name="OpcionPregunta_Opcion_Id_Pregunta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RespuestaPregunta">
+    <End Role="Respuesta" Type="Modelo.Store.Respuestas" Multiplicity="*" />
+    <End Role="Pregunta" Type="Modelo.Store.Preguntas" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Pregunta">
+        <PropertyRef Name="Id_Pregunta" />
+      </Principal>
+      <Dependent Role="Respuesta">
+        <PropertyRef Name="Pregunta_Id_Pregunta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonaRespuesta">
+    <End Role="Persona" Type="Modelo.Store.Personas" Multiplicity="1" />
+    <End Role="Respuesta" Type="Modelo.Store.Respuestas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="Id_Persona" />
+      </Principal>
+      <Dependent Role="Respuesta">
+        <PropertyRef Name="Persona_Id_Persona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EncuestadorEncuesta_Encuestador">
+    <End Role="Encuestador" Type="Modelo.Store.Encuestadores" Multiplicity="1" />
+    <End Role="EncuestadorEncuesta" Type="Modelo.Store.EncuestadorEncuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Encuestador">
+        <PropertyRef Name="Id_Encuestador" />
+      </Principal>
+      <Dependent Role="EncuestadorEncuesta">
+        <PropertyRef Name="Encuestador_Id_Encuestador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EncuestadorEncuesta_Encuesta">
+    <End Role="EncuestadorEncuesta" Type="Modelo.Store.EncuestadorEncuesta" Multiplicity="*" />
+    <End Role="Encuesta" Type="Modelo.Store.Encuestas" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Encuesta">
+        <PropertyRef Name="Id_Encuesta" />
+      </Principal>
+      <Dependent Role="EncuestadorEncuesta">
+        <PropertyRef Name="EncuestadorEncuesta_Encuestador_Id_Encuesta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

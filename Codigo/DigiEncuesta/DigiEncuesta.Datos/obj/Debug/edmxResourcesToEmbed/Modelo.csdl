@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Modelo" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="ModeloContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Preguntas" EntityType="Modelo.Pregunta" />
+    <EntitySet Name="Respuestas" EntityType="Modelo.Respuesta" />
+    <EntitySet Name="Encuestadores" EntityType="Modelo.Encuestador" />
+    <EntitySet Name="Encuestas" EntityType="Modelo.Encuesta" />
+    <EntitySet Name="Tipo_Encuestas" EntityType="Modelo.Tipo_Pregunta" />
+    <EntitySet Name="Opciones" EntityType="Modelo.Opcion" />
+    <EntitySet Name="Personas" EntityType="Modelo.Persona" />
+    <AssociationSet Name="EncuestadorEncuesta" Association="Modelo.EncuestadorEncuesta">
+      <End Role="Encuestador" EntitySet="Encuestadores" />
+      <End Role="Encuesta" EntitySet="Encuestas" />
+    </AssociationSet>
+    <AssociationSet Name="EncuestaPersona" Association="Modelo.EncuestaPersona">
+      <End Role="Encuesta" EntitySet="Encuestas" />
+      <End Role="Persona" EntitySet="Personas" />
+    </AssociationSet>
+    <AssociationSet Name="EncuestaPregunta" Association="Modelo.EncuestaPregunta">
+      <End Role="Encuesta" EntitySet="Encuestas" />
+      <End Role="Pregunta" EntitySet="Preguntas" />
+    </AssociationSet>
+    <AssociationSet Name="Tipo_PreguntaPregunta" Association="Modelo.Tipo_PreguntaPregunta">
+      <End Role="Tipo_Pregunta" EntitySet="Tipo_Encuestas" />
+      <End Role="Pregunta" EntitySet="Preguntas" />
+    </AssociationSet>
+    <AssociationSet Name="OpcionPregunta" Association="Modelo.OpcionPregunta">
+      <End Role="Opcion" EntitySet="Opciones" />
+      <End Role="Pregunta" EntitySet="Preguntas" />
+    </AssociationSet>
+    <AssociationSet Name="RespuestaPregunta" Association="Modelo.RespuestaPregunta">
+      <End Role="Respuesta" EntitySet="Respuestas" />
+      <End Role="Pregunta" EntitySet="Preguntas" />
+    </AssociationSet>
+    <AssociationSet Name="PersonaRespuesta" Association="Modelo.PersonaRespuesta">
+      <End Role="Persona" EntitySet="Personas" />
+      <End Role="Respuesta" EntitySet="Respuestas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Pregunta">
+    <Key>
+      <PropertyRef Name="Id_Pregunta" />
+    </Key>
+    <Property Type="Int32" Name="Numeracion" Nullable="false" />
+    <Property Type="String" Name="Texto" Nullable="false" />
+    <Property Type="Int32" Name="Id_Pregunta" Nullable="false" />
+    <NavigationProperty Name="Tipo_Pregunta" Relationship="Modelo.Tipo_PreguntaPregunta" FromRole="Pregunta" ToRole="Tipo_Pregunta" />
+    <NavigationProperty Name="Opciones" Relationship="Modelo.OpcionPregunta" FromRole="Pregunta" ToRole="Opcion" />
+  </EntityType>
+  <EntityType Name="Respuesta">
+    <Key>
+      <PropertyRef Name="Id_Respuesta" />
+    </Key>
+    <Property Type="String" Name="Valor" Nullable="false" />
+    <Property Type="Int32" Name="Id_Respuesta" Nullable="false" />
+    <NavigationProperty Name="Pregunta" Relationship="Modelo.RespuestaPregunta" FromRole="Respuesta" ToRole="Pregunta" />
+    <NavigationProperty Name="Persona" Relationship="Modelo.PersonaRespuesta" FromRole="Respuesta" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="Encuestador">
+    <Key>
+      <PropertyRef Name="Id_Encuestador" />
+    </Key>
+    <Property Type="Int32" Name="Id_Encuestador" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="String" Name="Contraseña" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Encuesta">
+    <Key>
+      <PropertyRef Name="Id_Encuesta" />
+    </Key>
+    <Property Type="String" Name="Fecha" Nullable="false" />
+    <Property Type="Int32" Name="Muestra" Nullable="false" />
+    <Property Type="String" Name="Publico" Nullable="false" />
+    <Property Type="Int32" Name="Id_Encuesta" Nullable="false" />
+    <NavigationProperty Name="Encuestador" Relationship="Modelo.EncuestadorEncuesta" FromRole="Encuesta" ToRole="Encuestador" />
+    <Property Type="String" Name="Nombre_Encuesta" Nullable="false" />
+    <NavigationProperty Name="Preguntas" Relationship="Modelo.EncuestaPregunta" FromRole="Encuesta" ToRole="Pregunta" />
+  </EntityType>
+  <EntityType Name="Tipo_Pregunta">
+    <Key>
+      <PropertyRef Name="Id_TipoPregunta" />
+    </Key>
+    <Property Type="Int32" Name="Id_TipoPregunta" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Opcion">
+    <Key>
+      <PropertyRef Name="Id_Opcion" />
+    </Key>
+    <Property Type="String" Name="Numeral" Nullable="false" />
+    <Property Type="String" Name="Texto" Nullable="false" />
+    <Property Type="Int32" Name="Id_Opcion" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Persona">
+    <Key>
+      <PropertyRef Name="Id_Persona" />
+    </Key>
+    <Property Type="Int32" Name="Id_Persona" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" />
+    <Property Type="String" Name="Barrio" Nullable="false" />
+    <Property Type="String" Name="Direccion" Nullable="false" />
+    <Property Type="String" Name="Telefono" Nullable="false" />
+    <Property Type="Int32" Name="Edad" Nullable="false" />
+    <NavigationProperty Name="Encuesta" Relationship="Modelo.EncuestaPersona" FromRole="Persona" ToRole="Encuesta" />
+  </EntityType>
+  <Association Name="EncuestadorEncuesta">
+    <End Type="Modelo.Encuestador" Role="Encuestador" Multiplicity="*" />
+    <End Type="Modelo.Encuesta" Role="Encuesta" Multiplicity="*" />
+  </Association>
+  <Association Name="EncuestaPersona">
+    <End Type="Modelo.Encuesta" Role="Encuesta" Multiplicity="1" />
+    <End Type="Modelo.Persona" Role="Persona" Multiplicity="*" />
+  </Association>
+  <Association Name="EncuestaPregunta">
+    <End Type="Modelo.Encuesta" Role="Encuesta" Multiplicity="1" />
+    <End Type="Modelo.Pregunta" Role="Pregunta" Multiplicity="*" />
+  </Association>
+  <Association Name="Tipo_PreguntaPregunta">
+    <End Type="Modelo.Tipo_Pregunta" Role="Tipo_Pregunta" Multiplicity="1" />
+    <End Type="Modelo.Pregunta" Role="Pregunta" Multiplicity="*" />
+  </Association>
+  <Association Name="OpcionPregunta">
+    <End Type="Modelo.Opcion" Role="Opcion" Multiplicity="*" />
+    <End Type="Modelo.Pregunta" Role="Pregunta" Multiplicity="1" />
+  </Association>
+  <Association Name="RespuestaPregunta">
+    <End Type="Modelo.Respuesta" Role="Respuesta" Multiplicity="*" />
+    <End Type="Modelo.Pregunta" Role="Pregunta" Multiplicity="1" />
+  </Association>
+  <Association Name="PersonaRespuesta">
+    <End Type="Modelo.Persona" Role="Persona" Multiplicity="1" />
+    <End Type="Modelo.Respuesta" Role="Respuesta" Multiplicity="*" />
+  </Association>
+</Schema>
